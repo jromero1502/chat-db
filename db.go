@@ -8,16 +8,16 @@ import (
 )
 
 type Db struct {
-	host     string
-	user     string
-	password string
-	database string
-	port     string
-	conn     *gorm.DB
+	Host     string
+	User     string
+	Password string
+	Database string
+	Port     string
+	Conn     *gorm.DB
 }
 
 func (db *Db) NewConnection() {
-	dns := db.user + ":" + db.password + "@tcp(" + db.host + ":" + db.port + ")/" + db.database
+	dns := db.User + ":" + db.Password + "@tcp(" + db.Host + ":" + db.Port + ")/" + db.Database
 	fmt.Println(dns)
 	conn, err := gorm.Open(mysql.New(mysql.Config{
 		DSN: dns,
@@ -28,7 +28,7 @@ func (db *Db) NewConnection() {
 		return
 	}
 
-	db.conn = conn
+	db.Conn = conn
 }
 
 func PrintDbInfo(info string) {
