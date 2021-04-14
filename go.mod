@@ -1,4 +1,4 @@
-module github.com/jromero1502/chat_db
+module github.com/jromero1502/chat-db
 
 go 1.16
 
